@@ -15,7 +15,7 @@ class Button {
   }
   // function to display rect object
   void display() {
-    rectMode(CENTER);
+    
     rect(rectX, rectY, rectW, rectH);
     
   }

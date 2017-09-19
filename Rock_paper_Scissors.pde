@@ -45,7 +45,14 @@ void draw() {
   text("paper",300,350);
   text("scissors",500,350);
 }  
-  boolean rockChoice(int rectX, int rectY, int rectW, int rectH) {
+  boolean rockChoice() {
+    if (mouseX >= Button[0].rectX && mouseX <= Button[0].rectX+Button[0].rectW && mouseY >= Button[0].rectY && mouseY <= Button[0].rectY+Button[0].rectH) {
+      return true;
+    } else { 
+      return false;
+    }
+  }
+  boolean paperChoice(int rectX, int rectY, int rectW, int rectH) {
     if (mouseX >= rectX && mouseX <= rectX+rectW && mouseY >= rectY && mouseY <= rectY+rectH) {
       return true;
     } else { 
@@ -54,8 +61,36 @@ void draw() {
   }
   
   void mousePressed() {
+    
+    // if user chooses Rock
     if (rockChoice==true) {
       println("hello");
+    }
+    if (rockChoice==true && choices[index] == "paper") {
+      // lose
+    }
+    if (rockChoice==true && choices[index] == "scissors") {
+      // win
+    }
+    // if user chooses paper
+    if (paperChoice==true && choices[index] == "rock") {
+      // win
+    }
+    if (paperChoice==true && choices[index] == "paper") {
+      // draw
+    }
+    if (paperChoice==true && choices[index] == "scissors") {
+      // lose
+    }
+    // if user chooses scissors
+    if (scissorChoice==true && choices[index] == "rock") {
+      // lose
+    }
+    if (scissorChoice==true && choices[index] == "paper") {
+      // win
+    }
+    if (scissorChoice==true && choices[index] == "scissors") {
+      // draw
     }
   }
   
