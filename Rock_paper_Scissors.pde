@@ -2,10 +2,17 @@
 PFont r;
 // Initialising Array
 Button[] Button = new Button [3];
-// checking if mouse clicked on button
-boolean rectOver = false;
 // win counter
 int winCounter = 0;
+// boolean for choices
+boolean rockChoice=false;
+boolean paperChoice=false;
+boolean scissorChoice=false;
+boolean gameOver=false;
+// randomiser of chocies
+String[] choices = {"rock", "paper", "scissors"};
+int index = int (random(choices.length));
+
 
 void setup() {
   // size of window
@@ -37,4 +44,21 @@ void draw() {
   text("rock",100,350);
   text("paper",300,350);
   text("scissors",500,350);
-}
+}  
+  boolean rockChoice(int rectX, int rectY, int rectW, int rectH) {
+    if (mouseX >= rectX && mouseX <= rectX+rectW && mouseY >= rectY && mouseY <= rectY+rectH) {
+      return true;
+    } else { 
+      return false;
+    }
+  }
+  
+  void mousePressed() {
+    if (rockChoice==true) {
+      println("hello");
+    }
+  }
+  
+
+
+  
